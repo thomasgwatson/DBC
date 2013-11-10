@@ -2,9 +2,7 @@ function simonSays(){
 $(document).ready(function(){
   $('body').on('click', '#get_color', function(e){
     preventinator(e)
-    getColorPost().done(function(response){
-
-    })
+    getColorPost()
 
   });
   function preventinator(e){
@@ -15,8 +13,9 @@ $(document).ready(function(){
     $.ajax({
       type: 'post',
       url: '/color'
+    }).done(function(response){
+      console.log(response)
     })
-    console.log("Check the server console for success")
   }
 });
 }
