@@ -5,8 +5,8 @@ $(document).ready(function(){
     getColorPost()
 
   });
-  function preventinator(e){
-    e.preventDefault()
+  function preventinator(event){
+    event.preventDefault()
     console.log("Should have prevented Default")
   }
   function getColorPost(){
@@ -15,7 +15,11 @@ $(document).ready(function(){
       url: '/color'
     }).done(function(response){
       console.log(response)
+      responseHandler(response)
     })
+    function responseHandler(serverData){
+      $('#color_me li:nth-child(' + serverData.cell + ')').css( 'background-color', serverData.color)
+    }
   }
 });
 }
