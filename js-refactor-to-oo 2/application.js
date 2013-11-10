@@ -26,9 +26,15 @@ var rollButtonListener = function(){
 
 var rollEachDie = function(){
  $('.die').each(function(k, die) {
-      var value = Math.floor((Math.random()*6)+1);
-      $(die).text(value);
+      var sideOfDie = roll();
+      insertValue(sideOfDie, die);
     });
 }
 
-var roll = function(){}
+var roll = function(){
+  return Math.floor((Math.random()*6)+1)
+}
+
+var insertValue = function(value, die){
+  $(die).text(value)
+}
