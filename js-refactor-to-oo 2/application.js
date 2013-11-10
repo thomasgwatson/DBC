@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  addButtonListener();
+  addButtonListener()
   rollButtonListener();
 });
 
@@ -20,9 +20,15 @@ var addButtonListener = function(){
 
 var rollButtonListener = function(){
   $('#roller button.roll').on('click', function() {
-    $('.die').each(function(k, die) {
+    rollEachDie()
+  });
+}
+
+var rollEachDie = function(){
+ $('.die').each(function(k, die) {
       var value = Math.floor((Math.random()*6)+1);
       $(die).text(value);
     });
-  });
 }
+
+var roll = function(){}
