@@ -4,9 +4,14 @@ $(document).ready(function() {
   function bindEvents() {
     // Bind functions which add, remove, and complete todos to the appropriate
     // elements
-    $('button.add').on('click', function(e){
+    $('button.add').on('click', function(){
       var $toDoItem = buildTodo($('.todo').val())
       $('.todo_list').append($toDoItem)
+    })
+
+    $('.todo_list').on('click', '.complete', function(e){
+        e.preventDefault()
+        $(this).closest('.todo').addClass('complete')
     })
   }
 
