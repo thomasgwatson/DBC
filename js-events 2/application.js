@@ -10,9 +10,18 @@ $(document).ready(function() {
     })
 
     $('.todo_list').on('click', '.complete', function(e){
-        e.preventDefault()
-        $(this).closest('.todo').addClass('complete')
+      e.preventDefault()
+      getTodoNode.call(this).addClass('complete')
     })
+
+    $('.todo_list').on('click', '.delete', function(e){
+      e.preventDefault()
+      getTodoNode.call(this).remove()
+    })
+
+    var getTodoNode = function() {
+      return $(this).closest('.todo')
+    }
   }
 
   //Create functions to add, remove and complete todos
