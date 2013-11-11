@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-post '/color' do
+get '/color' do
   p "This suggests a successful post request has been made"
   #Create and return a JSON object with the random cell and color given below.
   if request.xhr?

@@ -1,4 +1,4 @@
-function simonSays(){
+// function simonSays(){
 $(document).ready(function(){
   $('body').on('click', '#get_color', function(e){
     preventinator(e)
@@ -9,9 +9,9 @@ $(document).ready(function(){
     event.preventDefault()
     console.log("Should have prevented Default")
   }
-  function getColorPost(){
+  function getColor(){
     $.ajax({
-      type: 'post',
+      type: 'get',
       url: '/color'
     }).done(function(response){
       console.log(response)
@@ -22,9 +22,9 @@ $(document).ready(function(){
     }
   }
 });
-}
+// }
 
-simonSays()
+// simonSays()
 
 
 // psuedo-code
