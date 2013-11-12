@@ -13,20 +13,12 @@ get '/events/new' do
 end
 
 post '/events/create' do
-  p params
   event = Event.create(params)
-  if ! event.valid?
-    @event = event
-    puts "This is inside the controller"
-    p @event
-    puts "This is inside the controller"
-    p @event.errors.full_messages
-    # p event.errors
-    # @errors = event.errors.messages
-    # p @errors
-    erb :create
+  if event.valid?
+    redirect '/'
   else
-    redirect '/'  
+    content_type :json
+    event.errors.messages.to_json
   end
-  
+
 end

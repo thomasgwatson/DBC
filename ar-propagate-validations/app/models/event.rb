@@ -6,6 +6,6 @@ class Event < ActiveRecord::Base
 
   def event_date_cannot_be_in_past
     p date
-    errors.add(:date, "can't be in the past") if date < Date.today
+    errors.add(:date, "can't be in the past") if date && date < Date.today
   end
 end

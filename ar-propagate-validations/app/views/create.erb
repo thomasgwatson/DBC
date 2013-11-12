@@ -1,10 +1,10 @@
 <div>
-  <%= @event.errors.full_messages if @event %>
-  <form action="/events/create" method="post">
-    Event title: <input type="text" name="title" placeholder="Add the title of your event"  value= <%="'#{@event.title}'" if @event%>> <br>
-    Organizer's name: <input type="text" name="organizer_name" placeholder="Joey Joe Joe for example" value= <%="'#{@event.organizer_name}'" if @event%>> <br>
-    Organizer's email: <input type="email" name="organizer_email" placeholder="Add your email" value= <%="#{@event.organizer_email}" if @event%>> <br>
-    Date: <input type="date" name="date" placeholder="What date is the event?" value= <%="#{@event.date}" if @event%>> <br>
+ <%= @event.errors.full_messages if @event %>
+  <form id='createEventForm' action="/events/create" method="post">
+    Event title: <input id='title' type="text" name="title" placeholder="Add the title of your event"  value= <%="'#{@event.title}'" if @event%>> <br>
+    Organizer's name: <input id='organizer_name' type="text" name="organizer_name" placeholder="Joey Joe Joe for example" value= <%="'#{@event.organizer_name}'" if @event%>> <br>
+    Organizer's email: <input id='organizer_email' type="email" name="organizer_email" placeholder="Add your email" value= <%="#{@event.organizer_email}" if @event%>> <br>
+    Date: <input id='date' type="date" name="date" placeholder="What date is the event?" value= <%="#{@event.date}" if @event%>> <br>
     <input type="submit" value="Save">
   </form>
 
