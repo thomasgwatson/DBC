@@ -15,10 +15,10 @@ end
 post '/events/create' do
   event = Event.create(params)
   if event.valid?
-    redirect '/'
+    p "this only prints if the event is valid?"
+    {status: 'added', url: '/'}.to_json
   else
     content_type :json
     event.errors.messages.to_json
   end
-
 end
