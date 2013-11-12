@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // Just focus on making events display pretty
   $('#createEventForm').on("submit", function (e) {
     e.preventDefault();
     console.log(e)
@@ -12,28 +11,11 @@ $(document).ready(function () {
       for (var attribute in response){
         var errors = response[attribute];
           for (var messages in errors){
-
-            // select the approp. element based on errors(response[attribute]) and then append each message
-            console.log(attribute)
-            console.log(messages)
-            console.log(errors[0])
-            $('#'+attribute).after('<p>LOL no</p>')
+            $('#'+attribute).after('<p>'+attribute+': ' + errors[messages] + '</p>')
           }
       }
     })
-    // var request = $.ajax({ url: $(this).attr('href'), type: 'delete' });
-    // request.done(function () { window.location = "/"; });
   });
-
-
-
 });
 
-
-
-
-
-   var data = $(this).serialize()
-   //  console.log(data)
-   //  var formValues = $(this).val
-   //  console.log(formValues)
+// Need to
